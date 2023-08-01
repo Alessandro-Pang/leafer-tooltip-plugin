@@ -80,7 +80,6 @@ function createTooltip(domID, event, node, config) {
     borderRadius: "2px",
     boxShadow: "0 0 4px #e2e2e2"
   });
-  console.log(event.screenX);
   if (!isExists) {
     document.body.appendChild(container);
   }
