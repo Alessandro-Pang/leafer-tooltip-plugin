@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "declaration": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "types/*"
+      ]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".vscode"
+  ],
+}
