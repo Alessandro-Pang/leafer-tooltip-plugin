@@ -1,20 +1,37 @@
 {
   "name": "leafer-tooltip-plugin",
-  "version": "1.0.0",
-  "description": "leafer, leafer ui, leafer plugin, tooltip",
+  "version": "1.0.1",
+  "description": "leafer tooltip plugin",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "index.d.ts",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm run build",
     "build": "rimraf dist && rollup -c",
     "dev": "rimraf dist && rollup -c --watch",
     "doc": "typedoc --options typedoc.json"
   },
-  "keywords": [],
-  "author": "zi.Yang",
-  "license": "MIT",
+  "author": "zi.yang <pcy1314@163.com> (https://gitee.com/Alessandro-pang)",
+  "homepage": "https://github.com/Alessandro-Pang/leafer-tooltip-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alessandro-Pang/leafer-tooltip-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alessandro-Pang/leafer-tooltip-plugin/issues"
+  },
+  "keywords": [
+    "leafer",
+    "leafer ui",
+    "leafer plugin",
+    "tooltip",
+    "提示框"
+  ],
+  "dependencies": {
+    "leafer-ui": "^1.0.0-beta.7"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.6",
     "@rollup/plugin-alias": "^5.0.0",
@@ -41,8 +58,5 @@
   "files": [
     "dist",
     "*.d.ts"
-  ],
-  "dependencies": {
-    "leafer-ui": "^1.0.0-beta.7"
-  }
+  ]
 }

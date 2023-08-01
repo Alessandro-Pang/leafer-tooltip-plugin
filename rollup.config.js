@@ -2,9 +2,9 @@
  * @Author: zi.yang
  * @Date: 2023-07-06 00:31:58
  * @LastEditors: zi.yang
- * @LastEditTime: 2023-07-06 01:17:06
- * @Description: 
- * @FilePath: /leafer-quick-render-plugin/rollup.config.js
+ * @LastEditTime: 2023-08-01 23:54:06
+ * @Description: rollup
+ * @FilePath: /leafer-tooltip-plugin/rollup.config.js
  */
 import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';

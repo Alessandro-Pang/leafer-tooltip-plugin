@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2023-08-01 21:53:46
  * @LastEditors: zi.yang
- * @LastEditTime: 2023-08-01 22:21:11
+ * @LastEditTime: 2023-08-01 23:29:36
  * @Description: README
  * @FilePath: /leafer-tooltip-plugin/README.md
 -->
@@ -25,6 +25,8 @@ npm i leafer-tooltip-plugin --save
 
 使用插件时，传入 `getContent` 参数，并返回需要展示的内容即可
 
+注意：需要将 leafer 实例类型指定为 `tooltip-plugin`
+
 ```js
 import { plugin } from 'leafer-tooltip-plugin';
 
@@ -39,6 +41,13 @@ usePlugin(plugin, {
     return dom;
   },
 });
+
+
+// leafer 实例指定 tooltip-plugin 类型才能生效
+const leafer = new Leafer({
+  view: window,
+  type: 'tooltip-plugin' // 指定插件类型
+})
 ```
 
 ### 效果演示
