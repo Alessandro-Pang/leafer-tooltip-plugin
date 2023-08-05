@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2023-08-01 21:53:46
  * @LastEditors: zi.yang
- * @LastEditTime: 2023-08-05 23:19:45
+ * @LastEditTime: 2023-08-05 23:41:05
  * @Description: README
  * @FilePath: /leafer-tooltip-plugin/README.md
 -->
@@ -157,7 +157,7 @@ const leafer = new Leafer({
 
 | 属性         | 类型 | 说明                     | 默认值｜ |
 | ------------ | ---- | ------------------------ | -------- |
-| type   | `布尔值 | 字符串`  | 自定义注册类型，如果为 `true`, 则默认为 'tooltip-plugin'，如果为空，或者为 false, 则为所有 leafer 注册               | -        |
+| type   | `布尔值 or 字符串`  | 自定义注册类型，如果为 `true`, 则默认为 'tooltip-plugin'，如果为空，或者为 false, 则为所有 leafer 注册               | -        |
 | className   | `字符串` | 自定义容器类样式               | -        |
 | includeTypes | `数组` | 允许展示提示框的类型列表 | 所有类型 |
 | getContent   | `函数` | 显示的内容               | -        |
