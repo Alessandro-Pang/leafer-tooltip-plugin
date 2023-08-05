@@ -1,6 +1,6 @@
 {
   "name": "leafer-tooltip-plugin",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "leafer tooltip plugin",
   "type": "module",
   "main": "dist/index.cjs",
@@ -30,7 +30,7 @@
     "提示框"
   ],
   "dependencies": {
-    "leafer-ui": "^1.0.0-beta.7"
+    "leafer-ui": "^1.0.0-beta.8"
   },
   "devDependencies": {
     "@babel/core": "^7.22.6",
