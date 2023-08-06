@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2023-08-01 21:53:46
  * @LastEditors: zi.yang
- * @LastEditTime: 2023-08-05 23:41:05
+ * @LastEditTime: 2023-08-06 12:44:46
  * @Description: README
  * @FilePath: /leafer-tooltip-plugin/README.md
 -->
@@ -14,6 +14,8 @@ Tooltip 插件主要用于 Leafer 元素/节点上 展示一些自定义信息�
 使用 Tooltip 插件后，当鼠标悬浮在元素上时，会显示一个弹框展示节点的详细信息。
 
 > 注意：该插件强依赖 leafer-ui@1.0.0-beta.8 版本及以上
+
+在线演示地址：[https://alexpang.cn/leafer-tooltip-plugin/](https://alexpang.cn/leafer-tooltip-plugin/)
 
 # 快速上手
 
