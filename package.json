@@ -8,7 +8,8 @@
   "types": "index.d.ts",
   "license": "MIT",
   "scripts": {
-    "publish": "npm run build && npm publish",
+    "publishDemo": "rimraf ./demo/dist && cp -r dist demo",
+    "prepublishOnly": "npm run build",
     "build": "rimraf dist && rollup -c",
     "dev": "rimraf dist && rollup -c --watch",
     "doc": "typedoc --options typedoc.json"

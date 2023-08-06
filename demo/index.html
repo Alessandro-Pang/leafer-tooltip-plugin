@@ -1,0 +1,157 @@
+<!--
+ * @Author: zi.yang
+ * @Date: 2023-08-06 01:15:31
+ * @LastEditors: zi.yang
+ * @LastEditTime: 2023-08-06 12:40:15
+ * @Description: 
+ * @FilePath: /leafer-tooltip-plugin/demo/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leafer Tooltip Plugin Demo</title>
+  <link rel="stylesheet" href="./assets/normalize.css" />
+  <link rel="stylesheet" href="./assets/milligram.css" />
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .h-100 {
+      height: 100%;
+    }
+
+    .h-50 {
+      height: 50%;
+    }
+
+    li {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .title {
+      line-height: 5rem;
+      margin: 0;
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .box {
+      height: calc(100% - 40px);
+      border: 1px solid #e2e2e2;
+    }
+
+    .my-tooltip-plugin {
+      border: 1px solid rgba(0, 157, 255, 0.62);
+      padding: 6px;
+      background-color: rgb(131, 207, 255);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .github {
+      position: absolute;
+      right: 2rem;
+      top: 1rem;
+      height: 4rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container" style="height: 6rem">
+    <h3 class="title">Leader Tooltip Plugin Demo</h3>
+    <img src="./assets/github.svg" alt="github" class="github" id="github">
+  </header>
+  <div class="container" style="height: calc(100% - 6rem)">
+    <div class="row h-50">
+      <div class="column column-50 h-100">
+        <div>Tooltip 默认实例</div>
+        <div class="box" id="demo1"></div>
+      </div>
+      <div class="column column-50 h-100">
+        <div>Tooltip 仅允许圆形触发</div>
+        <div class="box" id="demo2"></div>
+      </div>
+    </div>
+    <div class="row h-50">
+      <div class="column column-50 h-100">
+        <div>自定义 Tooltip 容器样式</div>
+        <div class="box" id="demo3"></div>
+      </div>
+      <div class="column column-50 h-100">
+        <div>指定 Tooltip 注册类型为 true</div>
+        <div class="box" id="demo4"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://unpkg.com/leafer-ui"></script>
+<script type="module">
+  import { plugin } from './dist/index.mjs';
+
+  document.getElementById('github').onclick = () => {
+    window.open('https://github.com/Alessandro-Pang/leafer-tooltip-plugin')
+  }
+
+  const Leafer = LeaferUI.Leafer;
+  const Rect = LeaferUI.Rect;
+
+  // 获取 Tooltip 内容
+  const getContent = (node) => {
+    const dom = `<ul style="list-style: none; margin: 0; padding: 0">
+        <li>节点类型：${node.tag}</li>
+        <li>宽度：${node.width}</li>
+        <li>高度：${node.height}</li>
+      </ul>
+      `;
+    return dom;
+  };
+
+  // 添加 Leafer 节点
+  function addLeaferNode(view, type) {
+    const leafer = new Leafer({ view, wheel: false, type: type || view });
+
+    const rect = Leafer.one({ tag: 'Rect', x: 100, y: 50, rotation: 0, width: 80, height: 80, opacity: 1, fill: 'rgba(50, 190, 7, 1)', stroke: 'rgba(155, 255, 243, 1)', strokeWidth: 11, });
+    const ellipse = Leafer.one({ tag: 'Ellipse', x: 100, y: 200, rotation: 0, width: 80, height: 80, opacity: 1, fill: 'rgba(0, 174, 255, 1)', stroke: 'rgba(255, 21, 21, 1)', strokeWidth: 21, startAngle: 0, endAngle: 0, innerRadius: 0, });
+    const polygon = Leafer.one({ tag: 'Polygon', x: 300, y: 50, rotation: 0, width: 80, height: 80, opacity: 1, fill: 'rgba(255, 144, 0, 1)', stroke: 'rgba(255, 0, 0, 1)', strokeWidth: 2, sides: 6, });
+    const star = Leafer.one({ tag: 'Star', x: 300, y: 200, rotation: 0, width: 80, height: 80, opacity: 1, fill: 'rgba(0, 217, 255, 1)', stroke: 'rgba(255, 238, 0, 1)', strokeWidth: 2, innerRadius: 0.382, points: 5, })
+
+    leafer.add(rect);
+    leafer.add(ellipse);
+    leafer.add(polygon);
+    leafer.add(star);
+  }
+
+  // ------------------------------ Demo 1 Begin -----------------------------------
+
+  LeaferUI.usePlugin(plugin, { type: 'demo1', getContent });
+  addLeaferNode('demo1');
+
+  // ------------------------------ Demo 2 Begin -----------------------------------
+
+  LeaferUI.usePlugin(plugin, { type: 'demo2', includeTypes: ['Ellipse'], getContent, });
+  addLeaferNode('demo2');
+
+  // ------------------------------ Demo 3 Begin -----------------------------------
+
+  LeaferUI.usePlugin(plugin, { type: 'demo3', className: 'my-tooltip-plugin', getContent, });
+  addLeaferNode('demo3');
+
+  // ------------------------------ Demo 4 Begin -----------------------------------
+
+  LeaferUI.usePlugin(plugin, { type: true, getContent });
+  addLeaferNode('demo4', 'tooltip-plugin');
+</script>
+
+</html>
