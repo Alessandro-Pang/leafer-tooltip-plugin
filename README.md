@@ -2,7 +2,7 @@
  * @Author: zi.yang
  * @Date: 2023-08-01 21:53:46
  * @LastEditors: zi.yang
- * @LastEditTime: 2023-08-08 21:30:58
+ * @LastEditTime: 2023-08-11 08:31:22
  * @Description: README
  * @FilePath: /leafer-tooltip-plugin/README.md
 -->
@@ -18,6 +18,8 @@ Tooltip 插件主要用于 Leafer 元素/节点上 展示一些自定义信息�
 在线演示地址：[https://alexpang.cn/leafer-tooltip-plugin/](https://alexpang.cn/leafer-tooltip-plugin/)
 
 基于 Leafer 社区实现的折线图 + Tooltip 实际使用案例：[https://codesandbox.io/p/sandbox/great-frog-w7mkz8](https://codesandbox.io/p/sandbox/great-frog-w7mkz8)
+
+Leafer插件开发教程：[https://juejin.cn/post/7265579369652977718](https://juejin.cn/post/7265579369652977718)
 
 # 快速上手
 
